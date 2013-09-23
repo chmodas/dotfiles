@@ -1,0 +1,15 @@
+[user]
+    email = chmodas@gmail.com
+    name = Borislav Borisov
+[color]
+    ui = true
+    grep = true
+    diff = true
+    branch = true
+    decorate = true
+    interactive = true
+    status = true
+[coloar]
+    branch = true
+[push]
+    default = simple
