@@ -9,6 +9,9 @@ RPROMPT="%{$fg_no_bold[cyan]%}[%{$fg_bold[white]%}%?%{$fg_no_bold[cyan]%}]%{$res
 
 export VISUAL=vim
 
+# Vim mode
+bindkey -v
+
 # History
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
