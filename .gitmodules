@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/pytest"]
 	path = .vim/bundle/pytest
 	url = https://github.com/alfredodeza/pytest.vim.git
+[submodule ".vim/bundle/salt"]
+	path = .vim/bundle/salt
+	url = https://github.com/saltstack/salt-vim
