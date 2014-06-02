@@ -43,6 +43,5 @@ bindkey '\e[B' down-line-or-beginning-search
 
 # Include any "local" settings
 if [[ -f ${HOME}/.zshrc.local ]]; then
-    echo "We have a local file!"
     source ${HOME}/.zshrc.local
 fi
