@@ -1,18 +1,20 @@
-#
+# We like colors
 autoload -U colors && colors
 
-# The left prompt
-PROMPT="%{$fg_no_bold[cyan]%}[%{$fg_bold[white]%}%n%{$fg_bold[red]%}@%{$fg_bold[white]%}%m %1~%{$fg_no_bold[cyan]%}]%# %{$reset_color%}"
+# Use autocomplete
+autoload -Uz compinit && compinit
 
-# The right prompt
-RPROMPT="%{$fg_no_bold[cyan]%}[%{$fg_bold[white]%}%?%{$fg_no_bold[cyan]%}]%{$reset_color%}"
+# Set the prompt
+autoload -Uz promptinit && promptinit
+prompt adam2
 
+# Set the default editor
 export VISUAL=vim
 
-# Vim mode
+# Enable Vim mode
 bindkey -v
 
-# History
+# History settings
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.history"
@@ -21,7 +23,26 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
+# Less settings
+LESSCHARSET=UTF-8
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias l='ls -la'
+
+# Up/Down arrow bindings
+autoload up-line-or-beginning-search
+autoload down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\eOA' up-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+bindkey '\eOB' down-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
+
+# Include any "local" settings
+if [[ -f ${HOME}/.zshrc.local ]]; then
+    echo "We have a local file!"
+    source ${HOME}/.zshrc.local
+fi

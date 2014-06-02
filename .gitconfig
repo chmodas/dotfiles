@@ -13,3 +13,5 @@
     branch = true
 [push]
     default = simple
+[merge "ours"]
+	driver = true
