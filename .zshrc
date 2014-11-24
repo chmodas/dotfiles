@@ -20,8 +20,10 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.history"
 
 setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
+
 
 # Less settings
 LESSCHARSET=UTF-8
