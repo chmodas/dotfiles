@@ -279,7 +279,7 @@ map <F11> :call RemoveTrailingSpaces()<CR>"
 set pastetoggle=<F12>
 
 " Copy text to clipboard
-map <C-c> "+y
+map <C-c> "+y<CR>
 
 " Paste text from clipboard
 map <C-v> "+gP
@@ -361,3 +361,11 @@ au FileType sh setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 smartin
 
 " PHP
 au FileType php setlocal expandtab
+
+" YAML
+au FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent
+
+" RST
+au FileType rst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent textwidth=120
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown

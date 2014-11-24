@@ -5,8 +5,7 @@ autoload -U colors && colors
 autoload -Uz compinit && compinit
 
 # Set the prompt
-autoload -Uz promptinit && promptinit
-prompt adam2
+PROMPT="%{$fg_bold[yellow]%}%#%{$fg_bold[black]%}(%{$fg_no_bold[cyan]%}%M %{$fg_bold[white]%}%~%{$fg_bold[black]%})%{$reset_color%} "
 
 # Set the default editor
 export VISUAL=vim
@@ -15,7 +14,7 @@ export VISUAL=vim
 bindkey -v
 
 # History settings
-export HISTSIZE=10000
+export HISTSIZE=50000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.history"
 
