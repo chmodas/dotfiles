@@ -9,7 +9,6 @@
     decorate = true
     interactive = true
     status = true
-[coloar]
     branch = true
 [push]
     default = simple
