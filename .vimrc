@@ -368,4 +368,10 @@ au FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartin
 " RST
 au FileType rst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent textwidth=120
 
+" Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au FileType markdown setlocal textwidth=79 formatoptions+=t wrap spell
+
+" HTML
+au FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent
+
