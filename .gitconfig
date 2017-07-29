@@ -1,5 +1,5 @@
 [user]
-	email = bborisov@protonmail.com
+	email = chmodas@gmail.com
 	name = Borislav Borisov
 [color]
     ui = true
@@ -12,5 +12,3 @@
     branch = true
 [push]
     default = simple
-[merge "ours"]
-	driver = true
