@@ -192,7 +192,7 @@ set pumheight=6
 set grepprg=ack
 
 " Colorscheme
-colorscheme elflord-dark
+colorscheme dracula
 
 " Don't outdent hashes
 inoremap # #
