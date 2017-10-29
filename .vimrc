@@ -370,7 +370,7 @@ au FileType rst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartind
 
 " Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-au FileType markdown setlocal textwidth=79 formatoptions+=t wrap spell
+au FileType markdown setlocal textwidth=99 formatoptions+=t wrap spell
 
 " HTML
 au FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent
