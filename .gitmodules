@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/dracula-theme"]
 	path = .vim/bundle/dracula-theme
 	url = git@github.com:dracula/vim.git
+[submodule "tmux-airline-dracula"]
+	path = tmux-airline-dracula
+	url = https://github.com/sei40kr/tmux-airline-dracula
