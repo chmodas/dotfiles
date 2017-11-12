@@ -58,8 +58,8 @@ set noswapfile
 set noautowrite
 set noautowriteall
 
-" Don't automatically re-read changed files.
-set noautoread
+" Automatically re-read changed files
+set autoread
 
 " (Y)es (N)o (C)ancel prompt
 set confirm
@@ -85,11 +85,29 @@ set lazyredraw
 " Allow the backspace key to delete anything in insert mode
 set backspace=indent,eol,start
 
+" Always set autoindenting on
+set autoindent
+
+" Use smart indent if there is no indent file
+set smartindent
+
+" Automatic program indenting
+set cindent
+
+" Format options:
+" 	t - autowrap normal text
+" 	c - autowrap comments
+" 	q - gq formats comments
+" 	n - autowrap lists
+" 	1 - break _before_ single-letter words
+" 	2 - use indenting from 2nd line of para
+set formatoptions=tcqn1
+
 " Use the appropriate number of spaces to insert a <Tab>
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
 set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 " Round indent to multiple of shiftwidth
 set shiftround
@@ -97,20 +115,20 @@ set shiftround
 " Don't break words
 set linebreak
 
+" String to put at the start of lines that have been wrapped
+set showbreak=
+
 " Don't wrap text
 set nowrap
-
-" Always set autoindenting on
-set autoindent
-
-" Use smart indent if there is no indent file
-set smartindent
 
 " Virtual editing in block mode
 set virtualedit=block
 
 " Incremental search
 set incsearch
+
+" Completion recognizes capitalization
+set infercase
 
 " Highlight search terms
 set hlsearch
@@ -149,6 +167,12 @@ set number
 " Show the line and column number of the cursor position
 set ruler
 
+" Number of lines to scroll with ^U and ^D
+set scroll=5
+
+" Number of lines to keep below and above the cursor
+set scrolloff=15
+
 " Highlight the screen line of the cursor
 set cursorline
 
@@ -180,7 +204,7 @@ set titlestring=%F\ %m
 " Display a list of matches when using command-line completion
 set wildmenu
 set wildmode=full
-set wildignore=*.o,*.obj,*.pyc,*.pyo,*.swp,.git
+set wildignore=*.o,*.obj,*.pyc,*.pyo,*.swp,.git,*.class
 
 " Don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
@@ -249,8 +273,7 @@ endfu
 
 " F1
 
-" F2: toggle Gundo window on/off
-map <F2> :GundoToggle<CR>
+" F2
 
 " F3: toggle NERDTreeTabs window on/off
 map <F3> :NERDTreeToggle<CR>
@@ -262,9 +285,7 @@ let NERDTreeShowHidden=1
 
 " F6
 
-" F7: run Flake8 against the current file
-autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
-let g:flake8_ignore="F403"
+" F7
 
 " F8
 
@@ -292,20 +313,14 @@ while c <= 'z'
     let c = nr2char(1+char2nr(c))
 endw
 
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.  
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
-
 " Reload .vimrc 
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Ctrl + jklm  changes to that split
-"map <c-j> <c-w>j
-"map <c-k> <c-w>k
-"map <c-l> <c-w>l
-"map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
@@ -317,10 +332,10 @@ nnoremap tm :tabm<Space>
 nnoremap td :tabclose<CR>
 
 
-" Quit window on <leader>q
+" Quit window on <leader> + q
 nnoremap <leader>q :q<CR>
 
-" hide matches on <leader>space
+" hide matches on <leader> + space
 nnoremap <leader><space> :nohlsearch<cr>
 
 " Select the item in the list with enter
