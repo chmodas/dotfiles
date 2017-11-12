@@ -22,8 +22,7 @@
 filetype off
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+call pathogen#helptags()
 
 " Syntax highlighting
 syntax on
