@@ -95,12 +95,12 @@ set smartindent
 set cindent
 
 " Format options:
-" 	t - autowrap normal text
-" 	c - autowrap comments
-" 	q - gq formats comments
-" 	n - autowrap lists
-" 	1 - break _before_ single-letter words
-" 	2 - use indenting from 2nd line of para
+"		t - autowrap normal text
+"		c - autowrap comments
+"		q - gq formats comments
+"		n - autowrap lists
+"		1 - break _before_ single-letter words
+"		2 - use indenting from 2nd line of para
 set formatoptions=tcqn1
 
 " Use the appropriate number of spaces to insert a <Tab>
