@@ -142,11 +142,11 @@ set foldmethod=indent
 " Disable automatic indent
 set foldlevel=99
 
-" Display the nonprintable characters and '$' at the end of line
+" Display the nonprintable characters
 set list
 
 " Displays tabs with :set list & displays when a line runs off-screen
-set listchars=eol:↩,trail:␣,precedes:⇐,extends:⇒,tab:\ \ "
+set listchars=trail:␣,precedes:⇐,extends:⇒,tab:\ \ "
 
 " Change the leader to be a comma
 let mapleader=","
