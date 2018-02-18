@@ -45,9 +45,13 @@ update_vim() {
 do_install() {
 	echo "Installing ..."
 
+	symlink $basedir/.Xresources $HOME/.Xresources
+	symlink $basedir/.i3/config $HOME/.config/i3/config
+
 	symlink $basedir/.gitconfig $HOME/.gitconfig
 
 	symlink $basedir/.zshrc $HOME/.zshrc
+	symlink $basedir/.curlrc $HOME/.curlrc
 
 	symlink $basedir/.vimrc $HOME/.vimrc
 	symlink $basedir/.vim $HOME/.vim

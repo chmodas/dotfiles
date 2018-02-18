@@ -1,0 +1,28 @@
+!--
+! URxvt settings
+!--
+URxvt*background: black
+URxvt*foreground: white
+
+! Scrollbar
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollWithBuffer: true
+
+! Fonts
+URxvt.font: xft:Hack-Regular:pixelsize=12,xft:Symbola
+URxvt.boldFont: xft:Hack-Bold:pixelsize=12:weight=bold,xft:Symbola
+URxvt.italicFont: xft:Hack-RegularOblique:pixelsize=12:slant=italic,xft:Symbola
+
+! Colours
+URxvt.termName: screen-256color
+URxvt.colourUL: yellow
+URxvt.underlineColor: yellow
+
+! Extensions
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 2
+URxvt.matcher.rend.0: Uline Bold fg8
