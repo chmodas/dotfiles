@@ -4,6 +4,7 @@
 [submodule ".vim/bundle/acp"]
 	path = .vim/bundle/acp
 	url = git@github.com:vim-scripts/AutoComplPop.git
+  ignore = untracked
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git@github.com:vim-scripts/The-NERD-tree.git
