@@ -10,6 +10,8 @@ Ideally, you would want to run [VIM 8][vim8].
 
 The Hack font.
 
+The font-awesome fonts (ttf and otf - https://bugs.archlinux.org/task/56899).
+
 ## Installation
 Run the install.sh script.
 

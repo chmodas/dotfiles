@@ -38,7 +38,7 @@ symlink() {
 }
 
 update_vim() {
-	cd $HOME/.vim
+	cd $basedir/.vim
 	git submodule update --init --recursive
 }
 

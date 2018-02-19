@@ -1,6 +1,7 @@
 #!/bin/bash
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 # Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+# Copyright (C) 2018 Borislav Borisov <chmodas@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -55,8 +56,15 @@ case $BLOCK_BUTTON in
   3) echo -n "$IPADDR" | xclip -q -se c ;;
 esac
 
-#------------------------------------------------------------------------
+# Assign the icon based using systemd's predictable network interface device names
+if [[ "$IF" =~ ^en ]]; then
+	ICON=$'\uf0e8'
+elif [[ "$IF" =~ ^wl ]]; then
+	ICON=$'\uf1eb'
+else
+	ICON=""
+fi
 
-ICON=$'\uf1eb'
+#------------------------------------------------------------------------
 printf "%b %s\n" $ICON $IPADDR  # full text
-printf "\uf1eb $IPADDR\n" # short text
+printf "$IPADDR\n" # short text
