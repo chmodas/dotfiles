@@ -8,6 +8,8 @@ Linux distributions package it.
 
 Ideally, you would want to run [VIM 8][vim8].
 
+The Hack font.
+
 ## Installation
 Run the install.sh script.
 

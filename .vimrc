@@ -146,7 +146,7 @@ set foldlevel=99
 set list
 
 " Displays tabs with :set list & displays when a line runs off-screen
-set listchars=trail:␣,precedes:⇐,extends:⇒,tab:\ \ "
+set listchars=trail:·,precedes:⇐,extends:⇒,tab:\ \ "
 
 " Change the leader to be a comma
 let mapleader=","
