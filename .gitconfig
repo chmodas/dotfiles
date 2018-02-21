@@ -12,3 +12,5 @@
     branch = true
 [push]
     default = simple
+[alias]
+	lol = log --graph --decorate --oneline
