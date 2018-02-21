@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-basedir=$(dirname $0)
+basedir=$(dirname $(realpath -s $0))
 
 # This script is meant for quick & easy install via:
 #   $ curl -fsSL https://github.com/chmodas/dotfiles | sh
@@ -38,7 +38,7 @@ symlink() {
 }
 
 update_vim() {
-	cd $HOME/.vim
+	cd $basedir/.vim
 	git submodule update --init --recursive
 }
 
@@ -47,6 +47,7 @@ do_install() {
 
 	symlink $basedir/.Xresources $HOME/.Xresources
 	symlink $basedir/.i3/config $HOME/.config/i3/config
+	symlink $basedir/.i3blocks $HOME/.config/i3blocks
 
 	symlink $basedir/.gitconfig $HOME/.gitconfig
 
