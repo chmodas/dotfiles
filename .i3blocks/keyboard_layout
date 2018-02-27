@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# TODO: layout per application, but that'll be written in Python, most likely.
+
+function setLayout {
+	local LAYOUT="$1"
+
+	if [[ -n "$LAYOUT" ]]; then
+		if [[ ! $LAYOUT =~ ^us|bg$ ]]; then
+			exit 0
+		fi
+	else
+		LAYOUT=$(setxkbmap -query | awk '/layout/ {print $2}')
+		case $LAYOUT in
+			us) LAYOUT="bg" ;;
+			bg) LAYOUT="us" ;;
+			*) exit 1 ;;
+		esac
+
+	fi
+
+	case $LAYOUT in
+		us) VARIANT="," ;;
+		bg) VARIANT="phonetic" ;;
+	esac
+
+	setxkbmap -model pc105 -layout ${LAYOUT} -variant ${VARIANT}
+}
+
+function getLayout {
+	local LAYOUT=$(setxkbmap -query | awk '/layout/ {print $2}')
+
+	echo $LAYOUT | tr /a-z/ /A-Z/
+	echo $LAYOUT | tr /a-z/ /A-Z/
+	echo "#FF0000"
+}
+
+function usage() {
+	echo "Usage:"
+	echo -e "\t$0 -h \t\t\t\t\tDisplay this help message."
+	echo -e "\t$0 -s 'us' \t\t\t\tChange the kayboard layout."
+	echo -e "\t$0 -g \t\t\t\t\tDisplay the current keyboard layout."
+}
+
+while getopts ":s?:g" opt; do
+	case "$opt" in
+		s) setLayout $OPTARG ;;
+		g) getLayout ;;
+		*) usage && exit 1 ;;
+	esac
+done

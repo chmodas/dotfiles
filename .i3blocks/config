@@ -70,10 +70,10 @@ interval=10
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
+#[cpu_usage]
+#label=CPU
+#interval=10
+#min_width=CPU: 100.00%
 #separator=false
 
 #[load_average]
@@ -104,6 +104,14 @@ signal=1
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
+
+#
+# Keyboard Layout
+#
+[kbd_layout]
+command=~/.config/i3blocks/keyboard_layout -g
+interval=once
+signal=10
 
 # Generic media player support
 #
