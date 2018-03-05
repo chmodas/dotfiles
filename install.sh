@@ -45,6 +45,7 @@ update_vim() {
 do_install() {
 	echo "Installing ..."
 
+	symlink $basedir/.xinitrc $HOME/.xinitrc
 	symlink $basedir/.Xresources $HOME/.Xresources
 	symlink $basedir/.i3/config $HOME/.config/i3/config
 	symlink $basedir/.i3blocks $HOME/.config/i3blocks
