@@ -51,6 +51,7 @@ do_install() {
 
 	symlink $basedir/.gitconfig $HOME/.gitconfig
 
+	symlink $basedir/.zprofile $HOME/.zprofile
 	symlink $basedir/.zshrc $HOME/.zshrc
 	symlink $basedir/.curlrc $HOME/.curlrc
 
