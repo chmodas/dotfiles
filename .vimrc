@@ -3,9 +3,9 @@
 " ==============================
 " F1    help
 " F2    show gundu window
-" F3    toggle NerdTree on/off
+" F3
 " F4
-" F5
+" F5    toggle NerdTree on/off
 " F6
 " F7    run flakes8
 " F8
@@ -275,7 +275,7 @@ endfu
 " F2
 
 " F3: toggle NERDTreeTabs window on/off
-map <F3> :NERDTreeToggle<CR>
+map <F5> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " F4
@@ -312,7 +312,7 @@ while c <= 'z'
     let c = nr2char(1+char2nr(c))
 endw
 
-" Reload .vimrc 
+" Reload .vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Ctrl + jklm  changes to that split

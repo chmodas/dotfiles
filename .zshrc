@@ -8,7 +8,7 @@ autoload -Uz compinit && compinit
 PROMPT="%{$fg_bold[yellow]%}%#%{$fg_bold[black]%}(%{$fg_no_bold[cyan]%}%M %{$fg_bold[white]%}%~%{$fg_bold[black]%})%{$reset_color%} "
 
 # Set the default editor
-export VISUAL=vim
+export {SUDO_EDITOR,EDITOR,VISUAL}=vim
 
 # Enable Vim mode
 bindkey -v
@@ -44,5 +44,5 @@ bindkey '\e[B' down-line-or-beginning-search
 
 # Include any "local" settings
 if [[ -f ${HOME}/.zshrc.local ]]; then
-    source ${HOME}/.zshrc.local
+  source ${HOME}/.zshrc.local
 fi
