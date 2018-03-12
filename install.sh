@@ -46,9 +46,11 @@ do_install() {
 	echo "Installing ..."
 
 	symlink $basedir/.xinitrc $HOME/.xinitrc
+	symlink $basedir/.xinitrc.d $HOME/.xinitrc.d
 	symlink $basedir/.Xresources $HOME/.Xresources
 	symlink $basedir/.i3/config $HOME/.config/i3/config
 	symlink $basedir/.i3blocks $HOME/.config/i3blocks
+	symlink $basedir/redshift.conf $HOME/.config/redshift.conf
 
 	symlink $basedir/.gitconfig $HOME/.gitconfig
 
