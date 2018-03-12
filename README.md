@@ -12,6 +12,8 @@ The Hack font.
 
 The font-awesome fonts (ttf and otf - https://bugs.archlinux.org/task/56899).
 
+[Redshift](http://jonls.dk/redshift/).
+
 ## Installation
 Run the install.sh script.
 
