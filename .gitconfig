@@ -1,5 +1,5 @@
 [user]
-	email = chmodas@gmail.com
+	email = chmodas@astutebits.com
 	name = Borislav Borisov
 [color]
     ui = true
@@ -14,3 +14,11 @@
     default = simple
 [alias]
 	lol = log --graph --decorate --oneline
+	co = checkout
+  wip = !git add -u && git commit -m "WIP"
+  bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
