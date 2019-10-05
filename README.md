@@ -17,5 +17,7 @@ The font-awesome fonts (ttf and otf - https://bugs.archlinux.org/task/56899).
 ## Installation
 Run the install.sh script.
 
+Clone the i3blocks-contrib repository to $HOME/.config.
+
 [tmux]: https://github.com/tmux/tmux/wiki
 [vim8]: https://github.com/vim/vim/blob/master/runtime/doc/version8.txt

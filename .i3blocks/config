@@ -30,8 +30,9 @@ markup=none
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
-separator=false
+command=$HOME/.config/i3blocks-contrib/memory/memory
+label=MEM 
+separator=true
 interval=30
 
 #[memory]
@@ -46,7 +47,8 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+command=$HOME/.config/i3blocks-contrib/disk/disk
+label=HOME 
 #instance=/mnt/data
 interval=30
 
@@ -59,7 +61,7 @@ command=~/.config/i3blocks/iface
 #instance=wlan0
 color=#00FF00
 interval=10
-separator=false
+separator=true
 
 [wifi]
 #label=:
@@ -84,8 +86,9 @@ interval=10
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-#label=⚡
-label=:
+label=⚡
+command=$HOME/.config/i3blocks-contrib/battery/battery
+#label= 
 instance=0
 interval=30
 
@@ -93,6 +96,7 @@ interval=30
 # Volume indicator
 #
 [volume]
+command=$HOME/.config/i3blocks-contrib/volume/volume
 label=♪
 instance=Master
 interval=once
